@@ -18,7 +18,7 @@ public class StudentEntity {
 	
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	//@SequenceGenerator(name="EL_SEQ", sequenceName="EL_SEQ",allocationSize=1)
-	@Id f
+	@Id
 	@GeneratedValue(generator="increment")
 	@GenericGenerator(name="increment",strategy="increment")
 	@Column(name="id")
