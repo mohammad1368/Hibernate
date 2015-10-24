@@ -23,7 +23,7 @@ public class StudentEntity {
 	@GenericGenerator(name="increment",strategy="increment")
 	@Column(name="id")
 	long id;
-	int i;
+	
 	
 	@Column(name="name")
 	String name;
