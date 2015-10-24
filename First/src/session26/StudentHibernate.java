@@ -4,28 +4,22 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class HibernateTest {
+public class StudentHibernate {
 	
-	
-	public static void main(String[] args) {
-		
+	public static Session getSession() {
 		Configuration cfg=new Configuration().configure("session26/hibernate.cfg.xml");
 		cfg.addAnnotatedClass(StudentEntity.class);
 		SessionFactory factory = cfg.buildSessionFactory();
 		Session session = factory.openSession();
-		
-		/*StudentEntity entity=new StudentEntity();
-		entity.setName("hoseein");
-		entity.setCode("02");*/
-		
+		return session;
+	}
+	
+	public static void delete(Integer id) {
+		Session session=getSession();
+		StudentEntity entity = session.load(StudentEntity.class, id);
 		session.beginTransaction();
-		/*session.save(entity);*/
-		StudentEntity entity = session.load(StudentEntity.class, 1l);
 		session.delete(entity);
-		/*entity.setName("saeed");
-		session.update(entity);*/
 		session.getTransaction().commit();
-		/*System.out.println(entity.getName());*/
 	}
 
 }
