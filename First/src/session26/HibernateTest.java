@@ -14,12 +14,17 @@ public class HibernateTest {
 		SessionFactory factory = cfg.buildSessionFactory();
 		Session session = factory.openSession();
 		
-		StudentEntity entity=new StudentEntity();
+		/*StudentEntity entity=new StudentEntity();
 		entity.setName("hoseein");
-		entity.setCode("02");
+		entity.setCode("02");*/
+		
 		session.beginTransaction();
-		session.save(entity);
+		/*session.save(entity);*/
+		StudentEntity entity = session.load(StudentEntity.class, 1l);
+		entity.setName("saeed");
+		session.update(entity);
 		session.getTransaction().commit();
+		System.out.println(entity.getName());
 	}
 
 }
