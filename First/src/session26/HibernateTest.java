@@ -26,7 +26,6 @@ public class HibernateTest {
 		session.update(entity);*/
 		session.getTransaction().commit();
 		/*System.out.println(entity.getName());*/
-		salam;
 	}
 
 }
