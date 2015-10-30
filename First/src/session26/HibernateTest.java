@@ -20,7 +20,7 @@ public class HibernateTest {
 		
 		session.beginTransaction();
 		/*session.save(entity);*/
-		StudentEntity entity = session.load(StudentEntity.class, 1l);
+		StudentEntity entity = session.load(StudentEntity.class, 1l);Hello world..
 		session.delete(entity);
 		/*entity.setName("saeed");
 		session.update(entity);*/
